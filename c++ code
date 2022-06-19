@@ -1,0 +1,32 @@
+class Solution {
+public:
+    vector<int> inOrder(Node* root)
+    {
+       
+      stack<Node*>st;
+      vector<int>v;
+      if(root==NULL)return v;
+      Node* curr=root;
+      
+    while(!st.empty()||curr!=NULL){
+        
+       if(curr!=NULL){
+         st.push(curr);
+         curr=curr->left;
+           
+       } 
+       
+       else{
+           v.push_back(st.top()->data);
+           curr=st.top();
+           st.pop();
+           curr=curr->right;
+       }
+        
+        
+    }
+       
+       
+      return v; 
+    }
+};
