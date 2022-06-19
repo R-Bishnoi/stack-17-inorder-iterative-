@@ -18,9 +18,9 @@ public:
        
        else{
            v.push_back(st.top()->data);
-           curr=st.top();
+           curr=st.top()->right;
            st.pop();
-           curr=curr->right;
+       
        }
         
         
